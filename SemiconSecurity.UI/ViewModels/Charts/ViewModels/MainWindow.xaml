@@ -1,0 +1,21 @@
+<Window x:Class="SemiconSecurity.UI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    Title="SemiconSecurity Dashboard" Height="600" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <local:SensorChartControl Grid.Row="0"/>
+
+        <ListBox Grid.Row="1" ItemSource="{Binding EventLogs}">
+            <Listbox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" Fontsize="14"/>
+                </DataTemplate>
+            </Listbox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
